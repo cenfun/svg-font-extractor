@@ -1,0 +1,28 @@
+{
+    "name": "svg-font-extractor",
+    "version": "1.0.0",
+    "description": "svg-font-extractor",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "test": "node ./test/test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cenfun/svg-font-extractor.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "console-grid": "^2.0.0",
+        "eight-colors": "^1.0.2",
+        "htmlparser2": "^8.0.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.23.0",
+        "eslint-config-plus": "^1.0.3",
+        "eslint-plugin-html": "^7.1.0",
+        "themify-icons": "^1.0.0"
+    }
+}
