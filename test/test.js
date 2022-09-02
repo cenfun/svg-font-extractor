@@ -5,9 +5,9 @@ const EC = require('eight-colors');
 const SFE = require('../lib');
 
 const list = [{
-    input: '../node_modules/themify-icons/themify-icons/fonts/themify.svg',
-    output: 'output/themify-icons',
-    getNameMap: () => {
+    input: path.resolve(__dirname, '../node_modules/themify-icons/themify-icons/fonts/themify.svg'),
+    output: path.resolve(__dirname, 'output/themify-icons'),
+    getNameMap: function() {
         const file = path.resolve(__dirname, '../node_modules/themify-icons/themify-icons/_icons.scss');
         const content = fs.readFileSync(file, {
             encoding: 'utf-8'
@@ -37,19 +37,30 @@ const list = [{
 
         //console.log(nameMap);
 
-        console.log('nameMap', Object.keys(nameMap).length);
+        const total = EC.yellow(Object.keys(nameMap).length);
+
+        console.log('nameMap', total);
 
         return nameMap;
+    },
+
+    onSVGItem: function(item) {
+
+        if (!item.d) {
+            return;
+        }
+
+        if (!this.nameMap) {
+            this.nameMap = this.getNameMap();
+        }
+
+        item.name = this.nameMap[item.unicode] || item['glyph-name'] || item.index;
+
+        return item;
     }
 }];
 
 
 list.forEach((item) => {
-
-    SFE({
-        input: path.resolve(__dirname, item.input),
-        output: path.resolve(__dirname, item.output),
-        nameMap: item.getNameMap()
-    });
-
+    SFE(item);
 });
