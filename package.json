@@ -24,6 +24,7 @@
         "eslint": "^8.23.0",
         "eslint-config-plus": "^1.0.3",
         "eslint-plugin-html": "^7.1.0",
+        "icofont": "^1.0.0",
         "themify-icons": "^1.0.0"
     }
 }
