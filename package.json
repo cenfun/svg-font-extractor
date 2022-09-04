@@ -1,7 +1,7 @@
 {
     "name": "svg-font-extractor",
     "version": "1.0.0",
-    "description": "svg-font-extractor",
+    "description": "Extract all glyphs in the svg font to separate svg icon files",
     "main": "lib/index.js",
     "files": [
         "lib"
