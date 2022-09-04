@@ -60,19 +60,7 @@ const list = [{
     }
 }, {
     input: path.resolve(__dirname, '../node_modules/icofont/dist/fonts/icofont.svg'),
-    output: path.resolve(__dirname, 'output/icofont'),
-
-    onSVGItem: function(item) {
-
-        if (!item.d) {
-            return;
-        }
-
-        item.name = item['glyph-name'];
-
-        return item;
-    }
-
+    output: path.resolve(__dirname, 'output/icofont')
 }];
 
 
